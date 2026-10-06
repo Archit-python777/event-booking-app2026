@@ -3,12 +3,14 @@ const express = require("express");
 const mongoose = require("mongoose");
 const eventRoutes = require("./routes/eventRoutes"); // NEW
 const authRoutes = require("./routes/authRoutes");
+const bookingRoutes = require("./routes/bookingRoutes");
 
 const app = express();
 
 app.use(express.json()); // NEW
 app.use("/api/events", eventRoutes); // NEW
 app.use("/api/auth", authRoutes);
+app.use("/api/bookings", bookingRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello from the event booking server!");
