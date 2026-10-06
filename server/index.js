@@ -4,9 +4,11 @@ const mongoose = require("mongoose");
 const eventRoutes = require("./routes/eventRoutes"); // NEW
 const authRoutes = require("./routes/authRoutes");
 const bookingRoutes = require("./routes/bookingRoutes");
+const cors = require("cors");
 
 const app = express();
 
+app.use(cors());
 app.use(express.json()); // NEW
 app.use("/api/events", eventRoutes); // NEW
 app.use("/api/auth", authRoutes);
